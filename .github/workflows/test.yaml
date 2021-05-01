@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-python@v1
         with:
           python-version: '3.9.4'
-      - run: |
-          pip install jsonschema
-          python scripts/validate.py
+      - name: 'Install JSONSchema'
+        run: pip install jsonschema
+      - name: 'Validate Identifier Files'
+        run: python scripts/validate.py
+      
