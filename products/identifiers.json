@@ -1,0 +1,10 @@
+{
+    "sentinel_2_l1c": {
+        "id": "sentinel_2_l1c",
+        "title": "Sentinel-2 Level-1C"
+    },
+    "sentinel_2_l2a": {
+        "id": "sentinel_2_l2a",
+        "title": "Sentinel-2 Level-2A"
+    }
+}
