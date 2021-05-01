@@ -1,7 +1,11 @@
 import glob
 import json
+import os
 
 def main():
+    if not os.path.exists('build/'):
+        os.makedirs('build/')
+
     identifiers = {}    
     identifier_files = glob.glob('identifiers/*.json')
 

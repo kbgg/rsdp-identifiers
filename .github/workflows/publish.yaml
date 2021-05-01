@@ -1,0 +1,22 @@
+name: Publish JSON Identifier List
+on:
+  release:
+    types: [published]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inject env variables
+        uses: rlespinasse/github-slug-action@v3.x
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.9.4'
+      - uses: actions/checkout@v2
+      - name: Compile Identifier Files
+        run: python3 scripts/compile.py
+      - name: deploy JSON
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build
+          destination_dir: products
